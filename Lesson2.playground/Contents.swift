@@ -153,7 +153,7 @@ var variableForDouble: Int = 5
 var variableDouble4: Double = Double(variableForDouble)
 
 // 6. Проинициализируйте переменную типа Bool с рузьтатом сравнения константы из п.1 и переменной из п.2
-var bolean1: Bool = true
+var bolean1: Bool 
 bolean1 = constant1 < variable2
 bolean1 = constant1 < variable1
 // 7. Проинициализируйте переменую типа String с каким-либо значением
