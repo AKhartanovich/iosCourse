@@ -212,7 +212,6 @@ protocol PHasDoors {
 }
 
 class Car: WheelTransport, PHasDoors{
-//    let doors: UInt
     internal var openDoorsArr: [Bool] = []
     init(doors doorsVehicle: UInt,torque torqueVehicle: UInt, weigth weightVehicle: UInt) {
         self.openDoorsArr = Array(repeating: true, count: Int(doorsVehicle))
@@ -267,7 +266,6 @@ class Rodster: Car {
 }
 
 class Helicopter: Vehicle, PHasDoors{
-//    let doors: UInt
     internal var openDoorsArr: [Bool] = []
     init(doors doorsHelicopter: UInt ,torque torqueVehicle: UInt, weigth weightVehicle: UInt) {
         super.init(torque: torqueVehicle, weigth: weightVehicle)
