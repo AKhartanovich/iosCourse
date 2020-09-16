@@ -200,27 +200,27 @@ class WheelTransport: Vehicle{
     }
     override func move(distanse: UInt) {
         super.move(distanse: distanse)
-        print("Vehicle ID \(self.ID) has \(wheelsCount) doors")
+        print("Vehicle ID \(self.ID) has \(wheelsCount) wheels")
     }
 }
 //ну тоже просто, протокол который должны реализовать классы
 protocol PHasDoors {
-    var doors: UInt {get}
+//    var doors: UInt {get}
+    var openDoorsArr: [Bool] {get}
     func openDoor (doorNumber: UInt)
     func closeDoor (doorNumber: UInt)
 }
 
 class Car: WheelTransport, PHasDoors{
-    let doors: UInt
-    private var openDoorsArr: [Bool] = []
+//    let doors: UInt
+    internal var openDoorsArr: [Bool] = []
     init(doors doorsVehicle: UInt,torque torqueVehicle: UInt, weigth weightVehicle: UInt) {
-        self.doors = doorsVehicle
-        self.openDoorsArr = Array(repeating: true, count: Int(doors))
+        self.openDoorsArr = Array(repeating: true, count: Int(doorsVehicle))
         super.init(wheels: 4, torque: torqueVehicle, weigth: weightVehicle)
     }
     
     func openDoor(doorNumber: UInt) {
-        if(doorNumber <= self.doors)
+        if(doorNumber <= self.openDoorsArr.count)
         {
         print("Car: door number \(doorNumber) has been opened")
             openDoorsArr[Int(doorNumber)] = false
@@ -232,7 +232,7 @@ class Car: WheelTransport, PHasDoors{
     }
     
     func closeDoor(doorNumber: UInt) {
-        if(doorNumber <= self.doors)
+        if(doorNumber <= self.openDoorsArr.count)
         {
         print("Car: door number \(doorNumber) has been closed")
             openDoorsArr[Int(doorNumber)] = true
@@ -267,16 +267,15 @@ class Rodster: Car {
 }
 
 class Helicopter: Vehicle, PHasDoors{
-    let doors: UInt
-    private var openDoorsArr: [Bool] = []
+//    let doors: UInt
+    internal var openDoorsArr: [Bool] = []
     init(doors doorsHelicopter: UInt ,torque torqueVehicle: UInt, weigth weightVehicle: UInt) {
-        self.doors = doorsHelicopter
         super.init(torque: torqueVehicle, weigth: weightVehicle)
         self.openDoorsArr = Array(repeating: true, count: Int(doorsHelicopter))
     }
     
     func openDoor(doorNumber: UInt) {
-        if(doorNumber <= self.doors)
+        if(doorNumber <= self.openDoorsArr.count)
         {
         print("Helicopter: door number \(doorNumber) has been opened")
             openDoorsArr[Int(doorNumber)] = false
@@ -288,7 +287,7 @@ class Helicopter: Vehicle, PHasDoors{
     }
     
     func closeDoor(doorNumber: UInt) {
-        if(doorNumber <= self.doors)
+        if(doorNumber <= self.openDoorsArr.count)
         {
         print("Helicopter: door number \(doorNumber) has been closed")
             openDoorsArr[Int(doorNumber)] = true
