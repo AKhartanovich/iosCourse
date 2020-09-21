@@ -200,7 +200,8 @@ func compareInt (_ number1: Int?, _ number2: Int?) {
 print("Задание 1")
 let compareInt1: () = compareInt(2, 3)
 let compareInt2: () = compareInt(3, 2)
-let compateInt3: () = compareInt(nil, 3)
+var number: Int?
+let compateInt3: () = compareInt(number, 3)
 
 //2.
 func compare3Args (_ number1: Int?, _ number2: Int?, _ number3: Int?) {
@@ -224,7 +225,7 @@ let compare3Args2: () = compare3Args(1, 1, 3)
 let compare3Args3: () = compare3Args(1, 2, 1)
 let compare3Args4: () = compare3Args(1, 2, 2)
 let compare3Args5: () = compare3Args(2, 2, 2)
-let compare3Args6: () = compare3Args(1, nil, 3)
+let compare3Args6: () = compare3Args(1, number, 3)
 
 
 //3.
@@ -239,7 +240,7 @@ func equalNumber (_ number: Int?) {
 }
 
 print("Задание 3")
-let equlNumber1: () = equalNumber(nil)
+let equlNumber1: () = equalNumber(number)
 let equlNumber2: () = equalNumber(10)
 
 
