@@ -231,8 +231,8 @@ let compare3Args6: () = compare3Args(1, number, 3)
 //3.
 print("Заниние 3")
 func equalNumber (_ number: Int?) {
-    if let _ = number {
-        print("Значение равно: \(number!)")
+    if let numOptional = number {
+        print("Значение равно: \(numOptional)")
     }
     else {
         print("no value")
