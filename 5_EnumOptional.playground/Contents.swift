@@ -266,6 +266,31 @@ func planetToTheSun(planet: Planet?){
 let myPlanetToTheSun: () = planetToTheSun(planet: myPlanet)
 myPlanet.rawValue
 
+//Вреде в этот уже есть смысл)))
+enum HotDrinks {
+    case tea(String)
+    case coffee(String)
+    case cappuccino(String)
+}
+
+var hotDrink = HotDrinks.coffee("Растворимый кофе")
+
+func identifyTheHotDrink(param: HotDrinks?) {
+    guard let param = param else {return}
+    switch param {
+    case .cappuccino(let value):
+        print("Выбран горячий напиток: \(value)")
+    case .tea(let value):
+        print("Выбран горячий напиток: \(value)")
+    case .coffee(let value):
+        print("Выбран горячий напиток: \(value)")
+    }
+}
+
+let myHotDrink1: () = identifyTheHotDrink(param: hotDrink)
+hotDrink = HotDrinks.tea("Зеленый чай")
+let myHotDrink2: () = identifyTheHotDrink(param: hotDrink)
+
 enum IdentificationPerson{
     case name(String)
     case surname(String)
