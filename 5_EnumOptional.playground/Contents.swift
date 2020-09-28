@@ -314,11 +314,14 @@ func IdentificationPersonWith(param: IdentificationPerson?){
     }
 }
 
+
 let myIdentificationPerson1: () = IdentificationPersonWith(param: myPerson)
 myPerson = IdentificationPerson.surname("Khartanovich")
 let myIdentificationPerson2: () = IdentificationPersonWith(param: myPerson)
 myPerson = IdentificationPerson.serialNumber("MC", 1234567)
 let myIdentificationPerson3: () = IdentificationPersonWith(param: myPerson)
+
+myIdentificationPerson1
 
 
 
@@ -349,6 +352,16 @@ myNewBmw?.printInfo()
 myNewBmw?.acceleration?.distance(to: 100)
 myNewBmw?.vrumVrum()
 
+var a: Int?
+
+a = 10
+
+if let a = a {
+    print(a)
+}
+else {
+    print("osjdhfkjdshf")
+}
 
 
 // 3. Описать с помощью ENUM погодные явления, сопроводить(где возможно) associated values
@@ -391,5 +404,15 @@ let someWeather: () = printLocal(weather: localWeather)
 
 //: ### Advanced:
 //: * https://www.hackerrank.com/
+
+
+
+
+var dic: Dictionary<String,Int> = ["a": 2 , "b" : 2, "c" : 3 ]
+
+for (index, value) in dic {
+    print(index, value)
+}
+
 
 
