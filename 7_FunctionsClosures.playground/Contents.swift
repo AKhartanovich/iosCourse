@@ -354,6 +354,7 @@ func containElement1In(array1: Array<Int>, array2: Array<Int>,checkElement1: Int
 }
 containElement1In(array1: arrayForCheck1, array2: arrayForCheck2, checkElement1: 6, checkElement2: 7)
 
+
 //3. Write a Swift program to check whether the first element and the last element of a given array of integers are equal.
 //произвести проверку одинаковы ли первый и последний элементы данного массива(Int) и вывести соответствующее сообщение в консоль
 print("Task 3")
@@ -514,4 +515,16 @@ printing[1](3,3)
 // array.map(<#T##transform: (Int) throws -> T##(Int) throws -> T#>)
 // array.filter(<#T##isIncluded: (Int) throws -> Bool##(Int) throws -> Bool#>)
 
+
+var arrayForMap: Array<Int> = [2,1,5,7,3,5,2]
+let sortedArray = arrayForMap.map { (element) -> Int in
+    element * element
+}
+let sortedArray2 = arrayForMap.map{$0 * $0}
+
+
+let dictForFilter: Dictionary<Int, String> = [1 : "Sasha", 2: "Masha", 3: "Sasha"]
+let fixDictionary = dictForFilter.filter { (Value) -> Bool in
+    Value.value == "Sasha"
+}
 
